@@ -1,1 +1,136 @@
-# odisha-study-square-
+
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ODISHA STUDY SQUARE</title>
+<style>:root{--navy:#0f172a;--border:#e2e8f0;--slate:#f8fafc;--blue:#2563eb}*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Segoe UI,sans-serif}body{background:var(--slate);color:#1e293b}
+.header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;gap:10px;align-items:center}.mark{width:42px;height:42px;border-radius:10px;background:var(--navy);display:grid;place-items:center;color:#fff;font-weight:900}
+.banner{max-width:1160px;margin:14px auto;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1px 1fr;align-items:center;min-height:170px}
+@media(max-width:850px){.banner{grid-template-columns:1fr}.divider{display:none!important}}
+.bl{padding:28px 32px}.bl .oss{font-size:11px;font-weight:800;letter-spacing:2px;color:#64748b;margin-bottom:8px}.bl h1{font-size:28px;font-weight:900;color:var(--navy);line-height:1.1}.bl h1 span{color:var(--blue)}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.pill{padding:5px 11px;border-radius:20px;font-size:10px;font-weight:800}.pill-dark{background:var(--navy);color:#fff}.pill-blue{background:#eff6ff;color:#1d4ed8;border:1px solid #dbeafe}.pill-gray{background:#f1f5f9;color:#334155;border:1px solid var(--border)}
+.bl p{font-size:12px;color:#64748b;margin-top:10px;line-height:1.5;max-width:420px}
+.divider{background:var(--border);height:80%;align-self:center}
+.br{padding:28px 32px;background:radial-gradient(100% 100% at 100% 0%,#f1f5f9 0%,#fff 60%)}.quote-label{font-size:10px;font-weight:800;letter-spacing:2px;color:#94a3b8;margin-bottom:10px;display:flex;align-items:center;gap:8px}.quote-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:blink 1.5s infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.quote{font-size:20px;font-weight:800;color:var(--navy);line-height:1.3;min-height:52px;transition:.3s}.quote-sub{font-size:11px;color:#64748b;margin-top:8px;font-weight:600}
+.wrap{max-width:1160px;margin:0 auto;padding:14px}
+.section{margin-top:20px}.section-title{font-size:13px;font-weight:900;color:var(--navy);letter-spacing:.5px;display:flex;align-items:center;gap:8px;margin-bottom:10px}.section-title .line{flex:1;height:1px;background:var(--border)}
+.chips{display:flex;gap:8px;overflow:auto;padding:4px 0}.chip{padding:8px 16px;border-radius:20px;background:#fff;border:1px solid var(--border);font-weight:700;font-size:12px;white-space:nowrap;cursor:pointer}.chip.active{background:var(--navy);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:500px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:.15s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06);border-color:var(--navy)}.card h3{font-size:14px;font-weight:800;margin:10px 0 4px;color:var(--navy)}
+.btn{border:none;padding:10px 18px;border-radius:10px;font-weight:800;font-size:13px;cursor:pointer}.btn-navy{background:var(--navy);color:#fff}.btn-ghost{background:#fff;border:1px solid var(--border);color:var(--navy)}
+.exam{position:fixed;inset:0;z-index:100;background:#fff;display:none;flex-direction:column}.exam.on{display:flex}.eh{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}.eb{display:flex;flex:1;overflow:hidden}.el{flex:1;padding:16px;overflow:auto}.er{width:300px;background:#f8fafc;border-left:1px solid var(--border);padding:12px;overflow:auto}
+.q{font-size:17px;font-weight:700;margin:12px 0}.opt{border:1.5px solid var(--border);border-radius:10px;padding:12px;margin-bottom:8px;cursor:pointer;display:flex;gap:10px}.opt.sel{border-color:var(--navy);background:#eff6ff}
+.pal{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.p{width:38px;height:38px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;font-weight:700;cursor:pointer;background:#fff}.p.done{background:#dcfce7}.p.cur{background:var(--navy);color:#fff}.timer{font-weight:900;color:#fbbf24}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.6);display:none;place-items:center;z-index:200}.modal.on{display:grid}.box{background:#fff;border-radius:12px;padding:18px;width:92%;max-width:400px}.box input{width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);margin:6px 0}
+.empty{background:#fff;border:1px dashed var(--border);border-radius:12px;padding:28px;text-align:center}
+</style></head><body>
+<div class="header"><div class="logo"><div class="mark">OSS</div><div><b style="color:var(--navy)">ODISHA STUDY SQUARE</b><div style="font-size:10px;color:#64748b">For Odisha Aspirants • Since 2024</div></div></div><div style="display:flex;gap:8px"><span id="uName" style="font-size:12px;display:none"></span><button class="btn btn-ghost" id="lBtn" style="padding:8px 14px" onclick="openLogin()">Login</button><button class="btn btn-ghost" id="loBtn" style="display:none;padding:8px 14px" onclick="logout()">Logout</button></div></div>
+
+<div class="banner"><div class="bl"><div class="oss">ODISHA STUDY SQUARE</div><h1>Your Dream,<br><span>Our Mission.</span></h1>
+<div class="pill-row">
+<span class="pill pill-dark">OPSC ASO</span>
+<span class="pill pill-blue">OSSC CGL</span>
+<span class="pill pill-blue">OSSSC</span>
+<span class="pill pill-gray">SSC</span>
+<span class="pill pill-gray">RAILWAY</span>
+</div>
+<p>Syllabus-aligned mock tests with real exam interface, instant scoring & in-depth analysis. Built for Odisha aspirants.</p>
+<div style="margin-top:14px"><button class="btn btn-navy" onclick="document.getElementById('mainWrap').scrollIntoView()">Start Test Free →</button></div></div><div class="divider"></div><div class="br"><div class="quote-label"><div class="quote-dot"></div> DAILY MOTIVATION</div><div class="quote" id="quoteText">Dream it. Wish it. Do it.</div><div class="quote-sub" id="quoteSub">— Odisha Study Square is with you.</div></div></div>
+
+<div class="wrap" id="mainWrap">
+<!-- Free Section -->
+<div class="section" id="freeSection"><div class="section-title">🟢 FREE TESTS <div class="line"></div><span style="font-size:10px;color:#64748b;font-weight:600" id="freeCount"></span></div><div class="chips" id="chipsFree"></div><div class="grid" id="gridFree"></div></div>
+<!-- Premium Section - Only when batch is premium -->
+<div class="section" id="premiumSection" style="display:none"><div class="section-title">🔒 PREMIUM TESTS <div class="line"></div><span style="font-size:10px;color:#64748b;font-weight:600" id="premCount"></span></div><div class="chips" id="chipsPrem"></div><div class="grid" id="gridPrem"></div></div>
+<!-- Empty State -->
+<div id="emptyState" class="empty" style="display:none"><b>Tests are being prepared</b><p style="font-size:11px;color:#64748b;margin-top:6px">Admin is adding OPSC ASO / OSSC / OSSSC / SSC / Railway tests. Please check back in some time.</p></div>
+</div>
+
+<div id="exam" class="exam"><div class="eh"><div><b id="eT">Test</b> <span id="eP" style="font-size:11px;opacity:.7"></span></div><div style="display:flex;gap:10px;align-items:center"><span class="timer" id="timer">20:00</span><button class="btn btn-navy" style="background:var(--blue);padding:8px 14px" onclick="submitT()">Submit</button></div></div><div class="eb"><div class="el"><div id="qBox"></div><div style="margin-top:14px;display:flex;gap:6px"><button class="btn btn-ghost" onclick="clearR()">Clear</button><button class="btn btn-navy" onclick="nextQ()">Save & Next</button></div></div><div id="palBox" class="er"><b>Question Palette</b><div class="pal" id="pal" style="margin-top:8px"></div><div style="margin-top:12px"><button class="btn btn-navy" style="width:100%" onclick="submitT()">Final Submit</button><button class="btn btn-ghost" style="width:100%;margin-top:6px" onclick="closeE()">Exit</button><button class="btn btn-ghost" style="width:100%;margin-top:6px" onclick="window.print()">PDF</button></div></div></div></div>
+<div id="loginM" class="modal"><div class="box"><h3>Student Login</h3><input id="sName" placeholder="Full Name"><input id="sMob" placeholder="Mobile"><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-navy" onclick="doLogin()">Login</button><button class="btn btn-ghost" onclick="closeLogin()">Skip</button></div></div></div>
+
+<script>
+const defTitles=["Number System","Simplification","HCF & LCM","Square Roots","Surds & Indices","Percentage","Profit Loss","SI & CI","Ratio Proportion","Partnership","Mixture","Average","Ages","Time & Work","Pipes","Speed","Trains","Boats","Alligation","Mensuration"];
+const quotes=[
+{q:"Dream it. Wish it. Do it.",s:"Odisha Study Square is with you."},
+{q:"Believe you can and you're halfway there.",s:"Odisha Study Square is with you."},
+{q:"Your limitation—it's only your imagination.",s:"For OPSC ASO, OSSC & OSSSC aspirants."},
+{q:"Push yourself, because no one else will.",s:"Padhega Odisha, Badhega Odisha."},
+{q:"Great things never come from comfort zones.",s:"Odisha Study Square — Your preparation partner."},
+{q:"Success is the sum of small efforts, repeated daily.",s:"Daily test = Final selection."},
+{q:"The harder you work, the luckier you get.",s:"Odisha Study Square is with you."},
+{q:"Consistency beats perfection.",s:"Syllabus-aligned mocks daily."},
+{q:"Focus on your goal, not the obstacle.",s:"For OPSC ASO, OSSC, OSSSC, SSC, Railway."},
+{q:"It always seems impossible until it's done.",s:"Odisha Study Square is with you."}
+];
+let db={},prog={},custom={},batches={},student=null,curBatch='all',quoteIdx=0;
+try{db=JSON.parse(localStorage.getItem('oss_db_c')||'{}');prog=JSON.parse(localStorage.getItem('oss_prog_c')||'{}');custom=JSON.parse(localStorage.getItem('oss_cus_c')||'{}');batches=JSON.parse(localStorage.getItem('oss_bat_c')||'{}');student=JSON.parse(localStorage.getItem('oss_stu_c')||'null')}catch{}
+function rotateQ(){quoteIdx=(quoteIdx+1)%quotes.length;let el=document.getElementById('quoteText');let sub=document.getElementById('quoteSub');el.style.opacity=0;sub.style.opacity=0;setTimeout(()=>{el.innerText=quotes[quoteIdx].q;sub.innerText="— "+quotes[quoteIdx].s;el.style.opacity=1;sub.style.opacity=1},250)}setInterval(rotateQ,4000);
+async function loadGit(){try{let r=await fetch('./oss_data.json?v='+Date.now());if(r.ok){let j=await r.json();if(j.db){db=j.db;custom=j.titles||{};batches=j.batches||{};}}}catch(e){}render()}
+function render(){
+ let gF=document.getElementById('gridFree'), gP=document.getElementById('gridPrem');
+ let cF=document.getElementById('chipsFree'), cP=document.getElementById('chipsPrem');
+ let freeSec=document.getElementById('freeSection'), premSec=document.getElementById('premiumSection'), empty=document.getElementById('emptyState');
+ gF.innerHTML=''; gP.innerHTML=''; cF.innerHTML=''; cP.innerHTML='';
+ let total=0, freeCount=0, premCount=0;
+ let hasFree=false, hasPrem=false;
+ let batchMap={}; // batchId -> isPremium
+ Object.values(batches).forEach(b=>{if(b&&b.id){batchMap[b.id]= (b.name||'').toLowerCase().includes('premium') || (b.id||'').includes('premium')}});
+ // If no db at all
+ let allChapters=[];
+ for(let i=1;i<=20;i++){let k='ch'+i,ch=db[k];if(!ch||((ch.p1||[]).length+(ch.p2||[]).length==0))continue;allChapters.push({i,k,ch});total++}
+ if(allChapters.length==0){
+   freeSec.style.display='none'; premSec.style.display='none'; empty.style.display='block'; return;
+ }
+ empty.style.display='none';
+ // Build chips
+ let uniqFree={}, uniqPrem={};
+ allChapters.forEach(({i,k,ch})=>{
+   let bId = batches[k]?.id || batches[k] || 'ossc';
+   let isPrem = batchMap[bId] || false;
+   if(isPrem){uniqPrem[bId]= (batches[bId]?.name||bId)} else {uniqFree[bId]= (batches[bId]?.name||bId)}
+ });
+ let chipHtmlFree='<button class="chip active" data-b="all" onclick="filterB(\'all\',\'free\')">All</button>';
+ Object.keys(uniqFree).forEach(id=>{chipHtmlFree+='<button class="chip" data-b="'+id+'" onclick="filterB(\''+id+'\',\'free\')">'+(uniqFree[id]||id).toUpperCase()+'</button>'});
+ let chipHtmlPrem='<button class="chip active" data-b="all" onclick="filterB(\'all\',\'prem\')">All</button>';
+ Object.keys(uniqPrem).forEach(id=>{chipHtmlPrem+='<button class="chip" data-b="'+id+'" onclick="filterB(\''+id+'\',\'prem\')">'+(uniqPrem[id]||id).toUpperCase()+'</button>'});
+ cF.innerHTML=chipHtmlFree; cP.innerHTML=chipHtmlPrem;
+
+ allChapters.forEach(({i,k,ch})=>{
+   let bId = batches[k]?.id || batches[k] || 'ossc';
+   let isPrem = batchMap[bId] || false;
+   if(curBatch!=='all' && bId!==curBatch) return;
+   let tot=(ch.p1||[]).length+(ch.p2||[]).length;
+   let title=custom[i]||defTitles[i-1];
+   let pr=prog[k]||{p1:'Not Started'};
+   let btName=typeof batches[k]==='object'?batches[k].name:(batches[k]||'');
+   let card=document.createElement('div');card.className='card';
+   card.innerHTML='<div style="display:flex;justify-content:space-between;font-size:10px;font-weight:800;color:#64748b"><span>CH '+String(i).padStart(2,'0')+' • '+(btName||'').toUpperCase()+'</span><span style="background:'+(isPrem?'#fef3c7;color:#92400e':'#f1f5f9')+';padding:3px 8px;border-radius:20px">'+(isPrem?'PREMIUM':'FREE')+'</span></div><h3>'+title+'</h3><div style="font-size:11px;color:#64748b">'+tot+' Questions • Real Pattern</div><div style="margin-top:10px"><span style="background:#eff6ff;color:#1d4ed8;padding:5px 10px;border-radius:20px;font-size:11px;font-weight:700">Score: '+pr.p1+'</span></div><button class="btn btn-navy" style="width:100%;margin-top:12px">'+(isPrem?'Unlock Premium →':'Start Test →')+'</button>';
+   card.onclick=()=>{if(isPrem){alert('Premium test - Admin will unlock for paid students');return}startP(i,1)};
+   if(isPrem){gP.appendChild(card); premCount++; hasPrem=true} else {gF.appendChild(card); freeCount++; hasFree=true}
+ });
+ document.getElementById('freeCount').innerText= freeCount ? '('+freeCount+' tests)' : '';
+ document.getElementById('premCount').innerText= premCount ? '('+premCount+' tests)' : '';
+ freeSec.style.display = hasFree ? 'block' : 'none';
+ premSec.style.display = hasPrem ? 'block' : 'none';
+ if(!hasFree && !hasPrem){empty.style.display='block'}
+}
+function filterB(b,type){curBatch=b;
+ if(type==='free'){document.querySelectorAll('#chipsFree .chip').forEach(c=>c.classList.toggle('active',c.dataset.b==b))}
+ if(type==='prem'){document.querySelectorAll('#chipsPrem .chip').forEach(c=>c.classList.toggle('active',c.dataset.b==b))}
+ if(b==='all'){document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.b==='all')c.classList.add('active'); else if(c.parentElement.id.startsWith('chips')){} });}
+ render();
+}
+function openLogin(){document.getElementById('loginM').classList.add('on')}function closeLogin(){document.getElementById('loginM').classList.remove('on')}
+function doLogin(){let n=document.getElementById('sName').value,m=document.getElementById('sMob').value;if(!n||!m){alert('Name Mobile');return}student={name:n,mobile:m};localStorage.setItem('oss_stu_c',JSON.stringify(student));closeLogin();updateAuth()}function updateAuth(){let un=document.getElementById('uName'),lb=document.getElementById('lBtn'),lob=document.getElementById('loBtn');if(student){un.style.display='block';un.innerHTML='Hi, <b>'+student.name+'</b>';lb.style.display='none';lob.style.display='block'}else{un.style.display='none';lb.style.display='block';lob.style.display='none'}}function logout(){if(confirm('Logout?')){student=null;localStorage.removeItem('oss_stu_c');location.reload()}}
+let cur=[],curCh=0,curPart=1,curIdx=0,answers=[],timerInt=null,timeLeft=0;
+function startP(ch,part){let k='ch'+ch,d=db[k];if(!d){alert('No Q');return}cur=part==1?d.p1:d.p2;if(!cur||cur.length==0){alert('No Q');return}curCh=ch;curPart=part;curIdx=0;answers=new Array(cur.length).fill(null);timeLeft=cur.length*60;if(timeLeft<600)timeLeft=600;document.getElementById('exam').classList.add('on');document.getElementById('eT').innerText='Chapter '+ch;renderPal();showQ();startTimer()}
+function startTimer(){clearInterval(timerInt);timerInt=setInterval(()=>{timeLeft--;let m=Math.floor(timeLeft/60),s=timeLeft%60;document.getElementById('timer').innerText=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;if(timeLeft<=0){clearInterval(timerInt);submitT()}},1000)}
+function renderPal(){let p=document.getElementById('pal');p.innerHTML='';cur.forEach((_,i)=>{let b=document.createElement('div');b.className='p';if(i==curIdx)b.classList.add('cur');if(answers[i]&&answers[i].ans)b.classList.add('done');b.innerText=i+1;b.onclick=()=>{curIdx=i;showQ();renderPal()};p.appendChild(b)})}
+function showQ(){let q=cur[curIdx];document.getElementById('eP').innerText='Q '+(curIdx+1)+'/'+cur.length;document.getElementById('qBox').innerHTML='<div class="q">'+(curIdx+1)+'. '+q.q+'</div><div class="opt '+(answers[curIdx]&&answers[curIdx].ans=='A'?'sel':'')+'" onclick="selA(\'A\')"><b>A</b> '+q.a+'</div><div class="opt '+(answers[curIdx]&&answers[curIdx].ans=='B'?'sel':'')+'" onclick="selA(\'B\')"><b>B</b> '+q.b+'</div><div class="opt '+(answers[curIdx]&&answers[curIdx].ans=='C'?'sel':'')+'" onclick="selA(\'C\')"><b>C</b> '+q.c+'</div><div class="opt '+(answers[curIdx]&&answers[curIdx].ans=='D'?'sel':'')+'" onclick="selA(\'D\')"><b>D</b> '+q.d+'</div>';renderPal()}
+function selA(o){answers[curIdx]=answers[curIdx]||{};answers[curIdx].ans=o;showQ()}
+function nextQ(){if(curIdx<cur.length-1){curIdx++;showQ()}else submitT()}
+function clearR(){answers[curIdx]=null;showQ()}
+function closeE(){if(confirm('Exit?')){clearInterval(timerInt);document.getElementById('exam').classList.remove('on')}}
+function submitT(){clearInterval(timerInt);let score=0,correct=0,list='';cur.forEach((q,i)=>{let a=answers[i],ok=a&&a.ans==q.correct;if(a&&a.ans){if(ok){score+=1;correct++}else score-=0.33}list+='<div style="border-bottom:1px solid #e2e8f0;padding:10px 0"><b>Q'+(i+1)+':</b> '+q.q+'<br>Your: <b style="color:'+(ok?'#16a34a':'#dc2626')+'">'+(a&&a.ans?a.ans:'Skipped')+'</b> | Correct: <b style="color:#16a34a">'+q.correct+'</b> '+(ok?'✅':'❌')+'<br><div style="font-size:12px;background:#f8fafc;padding:8px;border-radius:8px;margin-top:6px">💡 '+(q.exp||'')+'</div></div>'});let k='ch'+curCh;prog[k]=prog[k]||{p1:'Not Started'};prog[k].p1='Score:'+score.toFixed(1);localStorage.setItem('oss_prog_c',JSON.stringify(prog));document.getElementById('exam').classList.remove('on');document.getElementById('mainWrap').style.display='none';let res=document.createElement('div');res.style.cssText='background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;margin:14px auto;max-width:1160px';res.innerHTML='<h2>Result: '+score.toFixed(1)+' / '+cur.length+'</h2><p>Correct: '+correct+'</p><div style="max-height:60vh;overflow:auto;margin:12px 0">'+list+'</div><div style="display:flex;gap:8px"><button class="btn btn-navy" onclick="this.parentElement.parentElement.remove();document.getElementById(\'mainWrap\').style.display=\'block\';render()">Back</button><button class="btn btn-navy" style="background:var(--blue)" onclick="this.parentElement.parentElement.remove();document.getElementById(\'mainWrap\').style.display=\'block\';startP('+curCh+','+curPart+')">Reattempt</button><button class="btn btn-ghost" onclick="window.print()">PDF</button></div>';document.body.appendChild(res);render()}
+loadGit();updateAuth();
+</script></body></html>
